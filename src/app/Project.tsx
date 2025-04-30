@@ -1,5 +1,6 @@
-
-
+import Thumbnail_TodoApp from "../assets/Thumbnail_TodoApp.png";
+import Thumbnail_SocialMediaApp from "../assets/Thumbnail_SocialMedia.png";
+import Thumbnail_Test from "../assets/Thumbnail_Test.png";
 export default function Project() {
 
     const Icons = {
@@ -15,27 +16,27 @@ export default function Project() {
     const projects = [
         {
           id: 1,
-          title: "E-commerce Dashboard",
-          description: "A responsive admin dashboard for managing products, orders, and customers with real-time analytics.",
-          tech: ["React", "Redux", "Chart.js", "Tailwind CSS"],
-          image: "/api/placeholder/600/400",
-          link: "http://localhost:5174/TodoApp/"
+          title: "Todo Application",
+          description: "A responsive admin dashboard for managing Todos.",
+          tech: ["React", "ContextAPI", "Tailwind CSS"],
+          image: Thumbnail_TodoApp,
+          link: "https://sandipnandy1.github.io/TodoApp/"
         },
         {
           id: 2,
           title: "Social Media App",
           description: "A full-featured social platform with user authentication, post creation, comments, and real-time notifications.",
           tech: ["React", "Firebase", "Material UI", "Context API"],
-          image: "/api/placeholder/600/400",
-          link: "https://www.google.com/"
+          image: Thumbnail_SocialMediaApp,
+          link: "https://www.facebook.com/"
         },
         {
           id: 3,
           title: "Weather Application",
           description: "A weather forecast application with location detection, interactive maps, and detailed weather insights.",
           tech: ["React", "Weather API", "React Query", "Styled Components"],
-          image: "/api/placeholder/600/400",
-          link: "https://www.google.com/"
+          image: Thumbnail_Test,
+          link: "https://sandipnandy1.github.io/Test1/"
         }
       ];
 
