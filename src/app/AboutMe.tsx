@@ -1,6 +1,10 @@
 
+interface AboutMeProps {
+  timeDiff: (date: Date) => string;
+}
 
-export default function AboutMe() {
+export default function AboutMe({timeDiff}: AboutMeProps) {
+  const initalDate = new Date(2022, 9);
   return (
     <div>
         <section id="about" className="py-16 bg-white">
@@ -14,7 +18,7 @@ export default function AboutMe() {
                 <div className="bg-white p-6 rounded-lg">
                   <h3 className="text-xl font-bold mb-3 text-gray-800">Professional Summary</h3>
                   <p className="text-gray-600 mb-4">
-                  Frontend Developer with 2.8 years of experience in the React ecosystem, skilled in React.js and Redux. Backed by an M.Tech and B.Sc. in Mathematics, I combine strong analytical skills with technical expertise to build scalable, user-focused web applications.
+                  Frontend Developer with {timeDiff(initalDate)} years of experience in the React ecosystem, skilled in React.js and Redux. Backed by an M.Tech and B.Sc. in Mathematics, I combine strong analytical skills with technical expertise to build scalable, user-focused web applications.
                   </p>
                   <div className="flex flex-wrap gap-2">
                     <span className="px-3 py-1 bg-purple-100 text-purple-800 rounded-full text-sm">React</span>

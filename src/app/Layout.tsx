@@ -44,6 +44,23 @@ export default function Layout() {
       setIsMenuOpen(false);
     }
   };
+  // Function to calculate the time difference in years and months
+  const initalDate = new Date(2022, 9);
+  const timeDifference = (startDate: Date) => {
+    const start = new Date(startDate);
+    const now = new Date();
+    let yearDiff = now.getFullYear() - start.getFullYear();
+    let monthDiff = now.getMonth() - start.getMonth();
+
+    if(monthDiff < 0) {
+      yearDiff -= 1;
+      monthDiff += 12;
+    }
+    if(monthDiff === 0) {
+      return `${yearDiff} Year`;
+    }
+    return `${yearDiff}.${monthDiff}`;
+  }
 
   // Icon components using SVG and JSX
   const Icons = {
@@ -148,7 +165,7 @@ export default function Layout() {
                 Frontend React Developer
               </h2>
               <p className="text-lg mb-8 text-gray-600 max-w-lg">
-                With 3 YOE crafting responsive, user-friendly web applications
+                With {timeDifference(initalDate)} YOE crafting responsive, user-friendly web applications
                 that combine functionality with modern design.
               </p>
               <div className="flex space-x-4">
@@ -176,7 +193,7 @@ export default function Layout() {
                   />
                 </div>
                 <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-full shadow-lg">
-                  <span className="font-medium">2.10 Years Exp.</span>
+                  <span className="font-medium">{timeDifference(initalDate)} Years Exp.</span>
                 </div>
               </div>
             </div>
@@ -184,7 +201,7 @@ export default function Layout() {
         </div>
       </section>
       {/* About Me, Skills, Projects, and Contacts */}
-      <AboutMe />
+      <AboutMe timeDiff ={timeDifference}/>
       <Skill />
       <Project />
       <Contacts />
