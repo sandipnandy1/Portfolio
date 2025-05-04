@@ -28,7 +28,49 @@ export default function Contacts() {
           </svg>
         ),
       };
+    
+    const sendMessageHandler = async () => {
+          const name = (
+            document.getElementById("name") as HTMLInputElement
+          ).value;
+          const email = (
+            document.getElementById("email") as HTMLInputElement
+          ).value;
+          const message = (
+            document.getElementById("message") as HTMLTextAreaElement
+          ).value;
 
+          if (!name || !email || !message) {
+            alert("Please fill out all fields.");
+            return;
+          }
+
+          const msg = {
+            to: "sandipnandy9@gmail.com",
+            from: "sandipnandy9@gmail.com",
+            subject: `New Contact Form Submission from ${name}`,
+            text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
+          }
+
+          try {
+            const response = await fetch("https://react-backend-pzoc.onrender.com/send-email", {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(msg),
+            });
+        
+            if (response.ok) {
+              alert("Your message has been sent successfully!");
+            } else {
+              alert("Failed to send your message. Please try again later.");
+            }
+          } catch (error) {
+            console.error("Error sending email:", error);
+            alert("An error occurred. Please try again later.");
+          }
+        };
   return (
     <div>
       <section
@@ -199,50 +241,7 @@ export default function Contacts() {
                 <button
                   type="button"
                   className="w-full py-3 px-6 bg-gradient-to-r from-pink-500 to-purple-500 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1"
-                  onClick={async () => {
-                    const name = (
-                      document.getElementById("name") as HTMLInputElement
-                    ).value;
-                    const email = (
-                      document.getElementById("email") as HTMLInputElement
-                    ).value;
-                    const message = (
-                      document.getElementById("message") as HTMLTextAreaElement
-                    ).value;
-
-                    if (!name || !email || !message) {
-                      alert("Please fill out all fields.");
-                      return;
-                    }
-
-                    try {
-                      const response = await fetch(
-                        "https://api.example.com/send-email",
-                        {
-                          method: "POST",
-                          headers: {
-                            "Content-Type": "application/json",
-                          },
-                          body: JSON.stringify({
-                            to: "sandipnandy9@gmail.com",
-                            subject: `New Contact Form Submission from ${name}`,
-                            message: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,
-                          }),
-                        }
-                      );
-
-                      if (response.ok) {
-                        alert("Your message has been sent successfully!");
-                      } else {
-                        alert(
-                          "Failed to send your message. Please try again later."
-                        );
-                      }
-                    } catch (error) {
-                      console.error("Error sending email:", error);
-                      alert("An error occurred. Please try again later.");
-                    }
-                  }}
+                  onClick={sendMessageHandler}
                 >
                   Send Message
                 </button>
