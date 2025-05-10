@@ -1,4 +1,4 @@
-
+import { easeInOut, motion } from 'framer-motion';
 
 export default function Skill() {
 
@@ -61,38 +61,76 @@ export default function Skill() {
       ];
 
   return (
-    <div>
-        <section id="skills" className="py-16 bg-gradient-to-br from-gray-50 to-gray-100">
+    <motion.div
+      id="projects"
+      initial="hidden"
+      whileInView="visible"
+      transition={{ duration: 1 }}
+      variants={{
+        visible: { opacity: 1, y: -20 },
+        hidden: { opacity: 0, y: 50 },
+      }}
+    >
+      <section
+        id="skills"
+        className="py-16 bg-gradient-to-br from-gray-50 to-gray-100"
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold mb-10 text-center">
-            Technical <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">Skills</span>
+            Technical{" "}
+            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
+              Skills
+            </span>
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <motion.div
+            initial="hidden"
+            whileInView="visible"
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: { staggerChildren: 0.2, ease: easeInOut },
+              },
+            }}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
+          >
             {skills.map((skill, index) => (
-              <div key={index} className="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+              <motion.div
+                key={index}
+                variants={{
+                  hidden: { opacity: 0, y: 20 },
+                  visible: { opacity: 1, y: 0 },
+                }}
+                transition={{ duration: 0.4, ease: "easeOut" }}
+                className="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+              >
                 <div className="p-6">
                   <div className="flex items-center mb-4">
                     <div className="p-3 rounded-full bg-gradient-to-br from-purple-500 to-pink-500 text-white mr-4">
                       {getIconByClass(skill.iconClass)}
                     </div>
-                    <h3 className="text-lg font-bold text-gray-800">{skill.name}</h3>
+                    <h3 className="text-lg font-bold text-gray-800">
+                      {skill.name}
+                    </h3>
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-2.5">
-                    <div 
-                      className="h-2.5 rounded-full bg-gradient-to-r from-purple-600 to-pink-600" 
+                    <div
+                      className="h-2.5 rounded-full bg-gradient-to-r from-purple-600 to-pink-600"
                       style={{ width: `${skill.level}%` }}
                     ></div>
                   </div>
                   <div className="flex justify-end mt-2">
-                    <span className="text-sm text-gray-600 font-medium">{skill.level}%</span>
+                    <span className="text-sm text-gray-600 font-medium">
+                      {skill.level}%
+                    </span>
                   </div>
                 </div>
-              </div>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
-    </div>
-  )
+    </motion.div>
+  );
 }
 
