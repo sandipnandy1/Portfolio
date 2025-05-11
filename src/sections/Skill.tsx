@@ -62,7 +62,7 @@ export default function Skill() {
 
   return (
     <motion.div
-      id="projects"
+      id="skills"
       initial="hidden"
       whileInView="visible"
       transition={{ duration: 1 }}

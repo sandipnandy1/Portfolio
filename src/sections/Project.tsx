@@ -53,8 +53,8 @@ export default function Project() {
 
   return (
     <motion.div
-      className="projects-section py-16 bg-white"
       id="projects"
+      className="py-16 bg-white"
       initial="hidden"
       whileInView="visible"
       transition={{ duration: 1 }}

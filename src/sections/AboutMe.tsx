@@ -8,7 +8,7 @@ export default function AboutMe({ timeDiff }: AboutMeProps) {
   const initalDate = new Date(2022, 9);
   return (
     <motion.div
-      id="projects"
+      id="about"
       initial="hidden"
       whileInView="visible"
       transition={{ duration: 1 }}
