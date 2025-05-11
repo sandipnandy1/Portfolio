@@ -84,7 +84,7 @@ export default function Project() {
                 }}
                 variants={{
                   visible: { opacity: 1 },
-                  hidden: { opacity: 0 },
+                  hidden: { opacity: 0 }
                 }}
                 className="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
               >
