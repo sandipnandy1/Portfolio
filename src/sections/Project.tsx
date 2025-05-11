@@ -80,7 +80,7 @@ export default function Project() {
                 transition={{
                   duration: 1,
                   delay: 0.2 * project.id,
-                  ease: [easeIn, easeOut],
+                  ease: [easeIn, easeOut]
                 }}
                 variants={{
                   visible: { opacity: 1 },
