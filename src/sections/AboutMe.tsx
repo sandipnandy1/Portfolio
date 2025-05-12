@@ -47,10 +47,22 @@ export default function AboutMe({ timeDiff }: AboutMeProps) {
                       JavaScript
                     </span>
                     <span className="px-3 py-1 bg-pink-100 text-pink-800 rounded-full text-sm">
-                      CSS
+                      TypeScript
+                    </span>
+                    <span className="px-3 py-1 bg-emerald-100 text-emerald-800 rounded-full text-sm">
+                      Redux
+                    </span>
+                    <span className="px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm">
+                      MSSQL
                     </span>
                     <span className="px-3 py-1 bg-green-100 text-green-800 rounded-full text-sm">
-                      Responsive
+                      HTML/CSS
+                    </span>
+                    <span className="px-3 py-1 bg-yellow-100 text-yellow-800 rounded-full text-sm">
+                      MongoDB
+                    </span>
+                    <span className="px-3 py-1 bg-rose-100 text-bg-rose-800 rounded-full text-sm">
+                      DSA
                     </span>
                   </div>
                 </div>

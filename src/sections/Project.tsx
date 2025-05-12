@@ -1,5 +1,5 @@
 import Thumbnail_TodoApp from "../assets/Thumbnail_TodoApp.png";
-import Thumbnail_SocialMediaApp from "../assets/Thumbnail_SocialMedia.png";
+import Thumbnail_MyUdemy from "../assets/Thumbnail_MyUdemy.png";
 import Thumbnail_Test from "../assets/Thumbnail_Test.png";
 import { easeIn, easeOut, motion } from "framer-motion";
 
@@ -33,11 +33,11 @@ export default function Project() {
     },
     {
       id: 2,
-      title: "Social Media App",
+      title: "Udemy Clone ReactJS",
       description:
         "A full-featured social platform with user authentication, post creation, comments, and real-time notifications.",
-      tech: ["React", "Firebase", "Material UI", "Context API"],
-      image: Thumbnail_SocialMediaApp,
+      tech: ["React", "Bootstrap", "Context API"],
+      image: Thumbnail_MyUdemy,
       link: "https://www.facebook.com/",
     },
     {
