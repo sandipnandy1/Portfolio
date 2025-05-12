@@ -38,7 +38,7 @@ export default function Project() {
         "A full-featured social platform with user authentication, post creation, comments, and real-time notifications.",
       tech: ["React", "Bootstrap", "Context API"],
       image: Thumbnail_MyUdemy,
-      link: "https://www.facebook.com/",
+      link: "https://sandipnandy1.github.io/Udemy-Clone-ReactJS/",
     },
     {
       id: 3,
