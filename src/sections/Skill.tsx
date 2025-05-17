@@ -1,5 +1,4 @@
 import { easeInOut, motion } from "framer-motion";
-import React from "react";
 
 export default function Skill() {
   const Icons = {
@@ -144,21 +143,22 @@ export default function Skill() {
   ];
 
   return (
-    <motion.div
-      id="skills"
-      initial="hidden"
-      whileInView="visible"
-      transition={{ duration: 1 }}
-      variants={{
-        visible: { opacity: 1, y: -20 },
-        hidden: { opacity: 0, y: 50 },
-      }}
-    >
+    <div>
       <section
         id="skills"
-        className="py-16 bg-gradient-to-br from-gray-50 to-gray-100"
+        className="py-16 bg-gradient-to-br from-pink-100 to-teal-100"
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          id="skills"
+          initial="hidden"
+          whileInView="visible"
+          transition={{ duration: 1 }}
+          variants={{
+            visible: { opacity: 1, y: -20 },
+            hidden: { opacity: 0, y: 50 },
+          }}
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        >
           <h2 className="text-3xl font-bold mb-10 text-center">
             Technical{" "}
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
@@ -214,8 +214,8 @@ export default function Skill() {
               </motion.div>
             ))}
           </motion.div>
-        </div>
+        </motion.div>
       </section>
-    </motion.div>
+    </div>
   );
 }

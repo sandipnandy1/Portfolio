@@ -7,18 +7,22 @@ interface AboutMeProps {
 export default function AboutMe({ timeDiff }: AboutMeProps) {
   const initalDate = new Date(2022, 9);
   return (
-    <motion.div
-      id="about"
-      initial="hidden"
-      whileInView="visible"
-      transition={{ duration: 1 }}
-      variants={{
-        visible: { opacity: 1, y: -20 },
-        hidden: { opacity: 0, y: 50 },
-      }}
-    >
-      <section id="about" className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div>
+      <section
+        id="about"
+        className="py-16 bg-gradient-to-tr from-pink-100 to-teal-100 backdrop-blur-sm"
+      >
+        <motion.div
+          id="about"
+          initial="hidden"
+          whileInView="visible"
+          transition={{ duration: 1 }}
+          variants={{
+            visible: { opacity: 1, y: -20 },
+            hidden: { opacity: 0, y: 50 },
+          }}
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        >
           <h2 className="text-3xl font-bold mb-6 text-center">
             About{" "}
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
@@ -63,6 +67,12 @@ export default function AboutMe({ timeDiff }: AboutMeProps) {
                     </span>
                     <span className="px-3 py-1 bg-rose-100 text-bg-rose-800 rounded-full text-sm">
                       DSA
+                    </span>
+                    <span className="px-3 py-1 bg-purple-100 text-bg-purple-800 rounded-full text-sm">
+                      AWS
+                    </span>
+                    <span className="px-3 py-1 bg-teal-100 text-bg-teal-800 rounded-full text-sm">
+                      Azure
                     </span>
                   </div>
                 </div>
@@ -127,8 +137,8 @@ export default function AboutMe({ timeDiff }: AboutMeProps) {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
-    </motion.div>
+    </div>
   );
 }

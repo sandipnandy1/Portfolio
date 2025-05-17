@@ -52,19 +52,19 @@ export default function Project() {
   ];
 
   return (
-    <motion.div
-      id="projects"
-      className="py-16 bg-white"
-      initial="hidden"
-      whileInView="visible"
-      transition={{ duration: 1 }}
-      variants={{
-        visible: { opacity: 1, y: -20 },
-        hidden: { opacity: 0, y: 50 },
-      }}
-    >
-      <section id="projects" className="py-16 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div>
+      <section id="projects" className="py-16 bg-gradient-to-tr from-pink-100 to-teal-100">
+        <motion.div
+          id="projects"
+          initial="hidden"
+          whileInView="visible"
+          transition={{ duration: 1 }}
+          variants={{
+            visible: { opacity: 1, y: -20 },
+            hidden: { opacity: 0, y: 50 },
+          }}
+          className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
+        >
           <h2 className="text-3xl font-bold mb-10 text-center">
             Featured{" "}
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
@@ -78,13 +78,13 @@ export default function Project() {
                 initial="hidden"
                 whileInView="visible"
                 transition={{
-                  duration: 1,
-                  delay: 0.2 * project.id,
-                  ease: [easeIn, easeOut]
+                  duration: 0.5,
+                  delay: 0.1 * project.id,
+                  ease: [easeIn, easeOut],
                 }}
                 variants={{
                   visible: { opacity: 1 },
-                  hidden: { opacity: 0 }
+                  hidden: { opacity: 0 },
                 }}
                 className="bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
               >
@@ -124,9 +124,8 @@ export default function Project() {
               </motion.div>
             ))}
           </div>
-        </div>
+        </motion.div>
       </section>
-    </motion.div>
+    </div>
   );
 }
-

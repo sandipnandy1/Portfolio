@@ -1,5 +1,6 @@
-import { motion } from "framer-motion";
+import { delay, motion } from "framer-motion";
 import profilePhoto from "../assets/myphoto.jpg";
+import { TypeAnimation } from "react-type-animation";
 
 interface HeroProps {
   timeDiff: (date: Date) => string;
@@ -10,13 +11,13 @@ function Hero({ timeDiff, scrollToSection }: HeroProps) {
   const initalDate = new Date(2022, 9);
 
   return (
-    <div>
+  <div className="rounded-xl  backdrop-blur-md bg-gradient-to-br from-pink-100 to-teal-100 p-6 shadow-lg">
       <motion.section
         id="home"
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1 }}
-        className="pt-24 pb-16 md:pt-32 md:pb-24"
+        className="relative z-10 pt-24 pb-16 md:pt-32 md:pb-24"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row items-center">
@@ -27,9 +28,23 @@ function Hero({ timeDiff, scrollToSection }: HeroProps) {
                   Sandip Nandy
                 </span>
               </h1>
-              <h2 className="text-2xl md:text-3xl font-bold mb-6 text-gray-700">
-                Frontend React Developer
-              </h2>
+              <div className="text-2xl md:text-3xl font-bold mb-6 text-gray-700 h-12">
+            <TypeAnimation
+              sequence={[
+                'Frontend Developer',
+                1000,
+                'UI/UX Designer',
+                1000,
+                'React Specialist',
+                1000,
+                'Full Stack Developer',
+                1000,
+              ]}
+              wrapper="span"
+              speed={50}
+              repeat={Infinity}
+            />
+          </div>
               <p className="text-lg mb-8 text-gray-600 max-w-lg">
                 With {timeDiff(initalDate)} YOE crafting responsive,
                 user-friendly web applications that combine functionality with
@@ -51,32 +66,43 @@ function Hero({ timeDiff, scrollToSection }: HeroProps) {
               </div>
             </div>
             <div className="md:w-1/2 flex justify-center">
-              <motion.div
+              <div className="relative">
+                <motion.div
                 initial={{ opacity: 0, scale: 0 }}
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{
                   duration: 1,
                   scale: {
                     type: "spring",
-                    visualDuration: 0.8,
+                    visualDuration: 0.6,
                     bounce: 0.4,
                   },
                 }}
-                className="relative"
-              >
-                <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl">
+                className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-white shadow-xl">
                   <img
                     src={profilePhoto}
                     alt="Developer profile"
                     className="w-full h-full object-cover"
                   />
-                </div>
-                <div className="absolute -bottom-4 -right-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-full shadow-lg">
+                </motion.div>
+                <motion.div 
+                initial={{ opacity: 0, scale: 0 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{
+                  duration: 1,
+                  scale: {
+                    delay: 0.5,
+                    type: "spring",
+                    visualDuration: 0.6,
+                    bounce: 0.4,
+                  },
+                }}
+                className="absolute -bottom-4 -right-4 bg-gradient-to-r from-blue-500 to-purple-600 text-white px-6 py-2 rounded-full shadow-lg">
                   <span className="font-medium">
                     {timeDiff(initalDate)} Years Exp.
                   </span>
-                </div>
-              </motion.div>
+                </motion.div>
+              </div>
             </div>
           </div>
         </div>

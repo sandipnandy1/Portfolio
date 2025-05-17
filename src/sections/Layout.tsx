@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import Navbar from "./Navbar";
 import Hero from "./Hero";
 import Footer from "./Footer";
+import ParticleBackground from "../components/ParticleBackground";
 
 export default function Layout() {
   const [isLoading, setIsLoading] = useState(true);
@@ -125,28 +126,28 @@ export default function Layout() {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 1 }}
-          className="font-sans antialiased text-gray-900 bg-gradient-to-br from-gray-50 to-gray-100 min-h-screen"
+          className="font-sans antialiased text-gray-900 bg-gradient-to-br from-gray-50 to-gray-100"
         >
+          <ParticleBackground />
+          <div className="relative z-10">
           <Navbar
             scrollToSection={scrollToSection}
             activeSection={activeSection}
             toggleMenu={toggleMenu}
             isMenuOpen={isMenuOpen}
           />
+          <div className="relative z-10 flex flex-col min-h-screen">
           <Hero timeDiff={timeDifference} scrollToSection={scrollToSection} />
           {/* About Me, Skills, Projects, and Contacts */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ duration: 1, delay: 0.5 }}
-          >
+          <div>
             <AboutMe timeDiff={timeDifference} />
             <Skill />
             <Project />
             <Contacts />
-          </motion.div>
-
+          </div>
+          </div>
           <Footer />
+          </div>
         </motion.div>
       )}
     </>
