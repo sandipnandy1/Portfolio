@@ -26,8 +26,8 @@ export default function Project() {
     {
       id: 1,
       title: "Todo Application",
-      description: "A responsive admin dashboard for managing Todos.",
-      tech: ["React", "ContextAPI", "Tailwind CSS"],
+      description: "A Todo App for State Management using Context API & Authentication using Auth0",
+      tech: ["React", "ContextAPI", "Tailwind CSS", "Auth0"],
       image: Thumbnail_TodoApp,
       link: "https://sandipnandy1.github.io/TodoApp/",
     },
@@ -44,7 +44,7 @@ export default function Project() {
       id: 3,
       title: "Weather Application",
       description:
-        "A weather forecast application with location detection, interactive maps, and detailed weather insights.",
+        "(Not deployed yet) A weather forecast application with location detection, interactive maps, and detailed weather insights.",
       tech: ["React", "Weather API", "React Query", "Styled Components"],
       image: Thumbnail_Test,
       link: "https://sandipnandy1.github.io/Test1/",

@@ -37,7 +37,7 @@ export default function AboutMe({ timeDiff }: AboutMeProps) {
                     Professional Summary
                   </h3>
                   <p className="text-gray-600 mb-4">
-                    Frontend Developer with {timeDiff(initalDate)} years of
+                    Full Stack Developer with {timeDiff(initalDate)} years of
                     experience in the React ecosystem, skilled in React.js and
                     Redux. Backed by an M.Tech and B.Sc. in Mathematics, I
                     combine strong analytical skills with technical expertise to
@@ -107,7 +107,7 @@ export default function AboutMe({ timeDiff }: AboutMeProps) {
                       Work Experience
                     </h3>
                     <p className="text-gray-600 mb-2">
-                      <span className="font-medium">Frontend Developer</span>
+                      <span className="font-medium">Full Stack Developer</span>
                     </p>
                     <p className="text-gray-500 text-sm">
                       Wipro Limited., 2022 - Present
