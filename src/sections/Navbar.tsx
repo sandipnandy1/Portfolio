@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import sato from "../assets/sato.png";
+import logo from "../assets/LogoPNG.png";
 
 interface NavbarProps {
   activeSection: string;
@@ -42,7 +42,7 @@ function Navbar({
           <div className="flex items-center">
             <div className="flex items-center space-x-2">
               <img
-                src={sato}
+                src={logo}
                 alt="Icon"
                 className="w-16 h-16 object-contain rounded-full"
               />
